@@ -70,4 +70,14 @@ function playGame(rounds) {
   }
 }
 
-playGame(5);
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
+
+rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+scissor.addEventListener("click", () => playRound("scissor", getComputerChoice()));
+
+rock.removeEventListener("click", () => console.log("rock listener removed"));
+paper.removeEventListener("click", () => console.log("paper listener removed"));
+scissor.removeEventListener("click", () => console.log("scissor listener removed"));
